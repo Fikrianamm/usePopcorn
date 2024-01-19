@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function WatchedMovie({ movie }) {
+function WatchedMovie({ movie, onDeleteWatched }) {
   return (
     <li>
-      <img src={movie.Poster} alt={`${movie.Title} poster`} />
-      <h3>{movie.Title}</h3>
+      <img src={movie.poster} alt={`${movie.title} poster`} />
+      <h3>{movie.title}</h3>
       <div>
         <p>
           <span>⭐️</span>
@@ -19,13 +19,20 @@ function WatchedMovie({ movie }) {
           <span>⏳</span>
           <span>{movie.runtime} min</span>
         </p>
+        <button
+          className="btn-delete"
+          onClick={() => onDeleteWatched(movie.imdbID)}
+        >
+          X
+        </button>
       </div>
     </li>
   );
 }
 
 WatchedMovie.propTypes = {
-  movie: PropTypes.array.isRequired,
+  movie: PropTypes.object.isRequired,
+  onDeleteWatched: PropTypes.func.isRequired,
 };
 
 export default WatchedMovie;
