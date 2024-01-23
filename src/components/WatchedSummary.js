@@ -32,7 +32,7 @@ function WatchedSummary({ watched }) {
 }
 
 WatchedSummary.propTypes = {
-  watched: PropTypes.array.isRequired,
+  watched: PropTypes.array,
 };
 
 export default WatchedSummary;

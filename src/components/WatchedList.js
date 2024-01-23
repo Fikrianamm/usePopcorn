@@ -17,7 +17,7 @@ function WatchedList({ watched, onDeleteWatched }) {
 }
 
 WatchedList.propTypes = {
-  watched: PropTypes.array.isRequired,
+  watched: PropTypes.array,
   onDeleteWatched: PropTypes.func.isRequired,
 };
 
